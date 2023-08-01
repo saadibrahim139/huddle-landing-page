@@ -78,76 +78,86 @@ h6 {
     --Open-Sans: 'Open Sans', sans-serif;
 }
 
-.attribution {
-    font-size: 11px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    display: none;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
-}
 
 
-body {
-    background-color: var(--Violet);
+.background {
+    /* background-color: var(--Violet); */
+    background-color: rgb(53, 6, 75);
     background-image: url("images/bg-mobile.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-}
-
-.container {
-    margin: 3rem 5rem;
 }
 
 .logo {
-    width: 9rem;
+    width: 8rem;
     display: block;
+    cursor: pointer;
+    transition: transform 1.2s;
+    -webkit-transition: transform 1.2s;
+    -moz-transition: transform 1.2s;
+    -ms-transition: transform 1.2s;
+    -o-transition: transform 1.2s;
 }
 
+.logo:hover {
+    transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+    -moz-transform: rotateX(360deg);
+    -ms-transform: rotateX(360deg);
+    -o-transform: rotateX(360deg);
+    transform-style: preserve-3d;
+    transition: transform 1.2s;
+    -webkit-transition: transform 1.2s;
+    -moz-transition: transform 1.2s;
+    -ms-transition: transform 1.2s;
+    -o-transition: transform 1.2s;
+}
+
+
 .main-img {
-    width: 26rem;
+    width: 100%;
     margin-top: 4rem;
 }
 
-.content {
+.container {
+    padding: 2rem;
+}
 
+.content {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-flow: column;
 }
 
 .content h1 {
     color: white;
     font-family: var(--Poppins);
-    width: 25rem;
     text-align: center;
-    margin-top: 5rem;
+    margin: 1.5rem 0 0 0;
+    font-size: 1.2rem;
+    width: fit-content;
 }
 
 .content p {
-    color: white;
+    color: rgba(255, 255, 255, 0.836);
     font-family: var(--Open-Sans);
     text-align: center;
-    width: 19rem;
     line-height: 1.6;
     margin-top: 1.4rem;
+    font-size: .84rem;
 }
+
 
 .content button {
     background-color: white;
     border: none;
-    padding: 1rem 4rem;
+    padding: .7rem 5.4rem;
     border-radius: 2rem;
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
     -ms-border-radius: 2rem;
     -o-border-radius: 2rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     font-family: var(--Poppins);
     font-size: .9rem;
     color: var(--Violet);
@@ -165,6 +175,15 @@ body {
     display: flex;
     margin-top: 3.3rem;
     gap: 1rem;
+
+}
+
+.links div {
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
 }
 
 .facebook:hover i {
@@ -177,9 +196,34 @@ body {
     border-color: var(--Soft-Magenta);
 }
 
+.insta:hover {
+    transform: translateY(-1rem);
+    -webkit-transform: translateY(-1rem);
+    -moz-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+}
+
+.facebook:hover {
+    transform: translateY(-1rem);
+    -webkit-transform: translateY(-1rem);
+    -moz-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+}
+
+.twitter:hover {
+    transform: translateY(-1rem);
+    -webkit-transform: translateY(-1rem);
+    -moz-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
+}
+
 .insta:hover i {
     color: var(--Soft-Magenta);
     border-color: var(--Soft-Magenta);
+
 }
 
 .links a {
@@ -236,45 +280,77 @@ body {
     align-items: center;
 }
 
-@media (min-width:768px) {
-    body {
+@media (min-width:1000px) {
+    .background {
         background-image: url("images/bg-desktop.svg");
         background-size: cover;
-        background-repeat: no-repeat;
-        justify-content: flex-start;
         height: 100vh;
+        display: flex;
     }
 
     .container {
         display: flex;
         flex-direction: row;
-        margin: 3rem 5rem;
-        gap: 2rem;
+        margin: 4rem 5rem 2.5rem 5rem;
+        padding: 0;
     }
 
-    .img-section .main-img {
-        width: 40rem;
+    .logo {
+        width: 9rem;
+    }
 
+    .img-section {
+        width: 50%;
+    }
+
+    .main-img {
+        margin-top: 6rem;
     }
 
     .content {
-        margin-top: 4rem;
+        width: 50%;
+        margin: 9rem 0 0 4rem;
         display: flex;
-        align-items: start;
+        justify-content: start;
+        align-items: flex-start;
     }
 
     .content h1 {
+        width: fit-content;
+        font-size: 2.5rem;
+        width: 28rem;
         text-align: start;
     }
 
     .content p {
-        text-align: start;
         width: 29rem;
+        text-align: start;
+        font-size: 1rem;
+    }
+
+    .content button {
+        padding: .8rem 4rem;
     }
 
     .links {
         position: absolute;
         bottom: 1rem;
-        right: 3rem;
+        right: 4rem;
     }
+
+    .attribution {
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        color: pink;
+    }
+
+    .attribution a {
+        color: white;
+        text-decoration: none;
+    }
+
 }
